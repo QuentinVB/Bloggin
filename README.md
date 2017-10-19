@@ -1,6 +1,6 @@
 # Bloggin
 A extraSmall blogging PHP apps
-##BDD struct :
+##BDD article :
 id
 titre
 resume
@@ -10,6 +10,12 @@ date post
 date lastEdit
 view
 published
+
+##BDD users :
+id
+userName
+password
+lastConnexionDate
 
 ## Todo
 ### vue principale :

@@ -16,7 +16,7 @@
 		));
 		return $req;
 	}
-	function updateConnectionDate($id)
+	function updateConnexionDate($id)
 	{
 		$bdd = connexion_database();
 		$req = $bdd->prepare("UPDATE `users` SET `lastConnectionDate` = NOW() WHERE `users`.`id` = :id");	
@@ -25,6 +25,6 @@
 		));
 		return date('Y-m-d H:i:s');
 	}
-	//hash password $password = hash("md5",$password);
+	//hash password $password = hash("md5","admin");
 	
 ?>

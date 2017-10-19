@@ -29,7 +29,7 @@
                $_SESSION['id'] = $user['id'];
                $_SESSION['userName'] = $user['userName'];
                $_SESSION['passwordHash'] = $user['password'];
-               $_SESSION['lastConnectionDate'] = updateConnectionDate($user['id']);
+               $_SESSION['lastConnexionDate'] = updateConnexionDate($user['id']);
                header("Location: ./index.php?page=backoffice&msg=connected");
             }
             else

@@ -24,6 +24,11 @@ include("./views/include/header.php");
         }
         ?>
         </section>
+        <nav>
+            <ul>
+                <li><a href="index.php?page=backoffice"><?php echo $backofficeAcces;?></a></li>	
+            </ul>
+        <nav>
     </body>	
 <?php
 $articleList->closeCursor(); // Termine le traitement de la requête date_format( , "j/m/y H:i")

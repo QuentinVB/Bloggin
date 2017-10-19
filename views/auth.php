@@ -3,9 +3,6 @@
 include("./views/include/header.php");
 ?>
 <body>
-	<?php
-        include("./views/include/viewHeader.php");
-	?>
 	<h1>Login</h1>
 		<section id="auth">
 		<form method="post" action="index.php?page=auth">
