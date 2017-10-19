@@ -10,7 +10,13 @@
 	function getAllPublishedResumeArticles()
 	{
 		$bdd = connexion_database();
-		$reponse = $bdd->query('SELECT `id`,`title`,`resume`,`datePost`,`view`,`published` FROM `articles` WHERE `published` is True');	
+		$reponse = $bdd->query('SELECT `id`,`title`,`resume`,`datePost`,`dateLastEdit`,`view`,`published` FROM `articles` WHERE `published` is True');	
+		return $reponse;
+	}
+	function getAllResumeArticles()
+	{
+		$bdd = connexion_database();
+		$reponse = $bdd->query('SELECT `id`,`title`,`resume`,`datePost`,`dateLastEdit`,`view`,`published` FROM `articles`');	
 		return $reponse;
 	}
 	function getArticleById($id)

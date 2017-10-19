@@ -6,6 +6,8 @@
 	}
 	else
 	{
+		include("./models/articleModel.php");
+		$articleList = getAllResumeArticles(); 
 		include("./controlers/msgmanager.php");	
 	    include("./views/backoffice.php");	
 	}
