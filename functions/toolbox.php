@@ -30,49 +30,4 @@ function convert_month($m)
 	}
 	return $m ;
 }
-function printMarker($classe)
-{
-	?>
-		var <?php echo $classe . "X"; ?> = L.layerGroup([
-		<?php
-		$reponse = getMarkersByClasses($classe);
-		while ($datamarker = $reponse->fetch())
-		{
-			if(($datamarker['isPrivate']==FALSE))
-			{
-				writeMarker($datamarker);
-			}
-			else if(($datamarker['isPrivate']==TRUE) && !empty($_SESSION['userName']))
-			{
-				if($_SESSION['rightsLevel']>=0)
-				{
-					writeMarker($datamarker);
-				}
-			}
-		}
-		?>L.marker([0,0],{icon: lieu})]);
-	<?php 
-
-}
-function writeMarker($datamarker)
-{
-?>L.marker(leafConvert([<?php 
-echo $datamarker['x']; 
-?>,<?php 
-echo $datamarker['y']; 
-?>]),{icon: <?php 
-echo $datamarker['classes']; 
-?>}).bindPopup('<?php 
-echo addslashes($datamarker['name']);
-?><br/><em><?php 
-echo $datamarker['x']; 
-?>:<?php 
-echo $datamarker['y']; 
-?></em><br/><?php
-//Deletemarker HERE 
-deleteButton($datamarker,"map");
-//editButton($datamarker,"map");
-?>'),
-<?php
-}
 ?>
