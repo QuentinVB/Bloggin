@@ -27,6 +27,26 @@
 		'id' => $id
 		));		
 		return $req;
+	}	
+	/*function getArticleByIdInterval($idFrom,$idTo)
+	{
+		$bdd = connexion_database();
+		$req = $bdd->prepare("SELECT * FROM `articles` WHERE `cartedata`.`classes` = :classes");	
+		$req -> execute(array(
+		'classes' => $classes
+		));		
+		return $req;
+	}*/
+	function createArticle($title,$resume,$content,$tags)
+	{
+		$bdd = connexion_database();
+		$req = $bdd->prepare("INSERT INTO `articles` (`id`, `title`, `resume`, `content`, `tags`, `datePost`, `dateLastEdit`, `view`, `published`) VALUES (NULL, :title, :resumee, :content, :tags, '', NOW(), '0', '0')");	
+		$req -> execute(array(
+		'title' => $title,
+		'resumee' => $resume,
+		'content' => $content,
+		'tags' => $tags,
+		));
 	}
 	function editArticlebyId($id,$title,$resume,$content,$tags)
 	{
@@ -47,13 +67,16 @@
 		'tags' => $tags,
 		));
 	}
-	/*function getArticleByIdInterval($idFrom,$idTo)
+	/*
+	function deleteMarker($id, $x,$y)
 	{
 		$bdd = connexion_database();
-		$req = $bdd->prepare("SELECT * FROM `articles` WHERE `cartedata`.`classes` = :classes");	
+		$req = $bdd->prepare("DELETE FROM `cartedata` WHERE `cartedata`.`id` = :id AND `cartedata`.`x` = :x AND `cartedata`.`y` = :y");	
 		$req -> execute(array(
-		'classes' => $classes
-		));		
-		return $req;
-	}*/
+		'id' => $id,
+		'x' => $x,
+		'y' => $y
+		));
+	}
+*/
 ?>

@@ -8,7 +8,7 @@
 		include("./models/articleModel.php");
 
 		$action = strip_tags($_GET['action']);
-
+		
 		if($action == "edit" && isset($_POST['id']))
 		{
 			$idGet = strip_tags($_GET['id']);
@@ -24,15 +24,18 @@
 			editArticlebyId($id,$title,$resume,$content,$tags);
 			header("Location: ./index.php?page=backoffice&msg=edit");
 		}
-		else if($action == "create")
+		else if($action == "create" && isset($_POST['content']))
 		{
-
+			$title = strip_tags($_POST['title']);
+			$resume= strip_tags($_POST['resume']);
+			$content = strip_tags( $_POST['content']);
+			$tags = strip_tags( $_POST['tags']);
+			createArticle($title,$resume,$content,$tags);
+			header("Location: ./index.php?page=backoffice&msg=create");
 		}
 		else
 		{
 
 		}
-		include("./controlers/msgmanager.php");	
-	    include("./views/articleEditor.php");	
 	}
 ?>
