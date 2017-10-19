@@ -1,10 +1,16 @@
 <?php
 //model
 	include("./functions/database_connexion.php");
-	function getAllArticle()
+	function getAllArticles()
 	{
 		$bdd = connexion_database();
 		$reponse = $bdd->query('SELECT * FROM `articles` ');	
+		return $reponse;
+	}
+	function getAllPublishedResumeArticles()
+	{
+		$bdd = connexion_database();
+		$reponse = $bdd->query('SELECT `id`,`title`,`resume`,`datePost`,`view`,`published` FROM `articles` WHERE `published` is True');	
 		return $reponse;
 	}
 	function getArticleById($id)

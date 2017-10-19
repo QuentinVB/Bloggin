@@ -4,10 +4,9 @@ include("./functions/toolbox.php");
 include("./views/include/header.php");
 ?>
     <body>
-        <header>
-            <h1>Blog Name</h1>
-            <nav>Navigation barre<nav>
-        </header>
+        <?php
+            include("./views/include/viewHeader.php");
+        ?>
         <section>
             <p>Introduction text</p>
         </section>
@@ -15,13 +14,13 @@ include("./views/include/header.php");
         <?php 
         while ($article = $articleList->fetch())
 		{
-        ?>
-            <article>
-                <h2><?php echo $article['title']; ?></h2>
-                <p><?php echo $article['resume']; ?> <a herf="index.php?page=article">lire => </a></p>
-                <p><?php  echo $article['datePost'];  ?></p>
-            </article>    
-        <?php    
+            ?>
+                <article>
+                    <h2><?php echo $article['title']; ?></h2>
+                    <p><?php echo $article['resume']; ?> <a href="index.php?page=article&amp;id=<?php echo $article['id']; ?>">lire => </a></p>
+                    <p><?php  echo $article['datePost'];  ?></p>
+                </article>    
+            <?php    
         }
         ?>
         </section>
