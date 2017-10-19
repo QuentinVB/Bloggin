@@ -28,6 +28,25 @@
 		));		
 		return $req;
 	}
+	function editArticlebyId($id,$title,$resume,$content,$tags)
+	{
+		$bdd = connexion_database();
+		$req = $bdd->prepare("UPDATE `articles` 
+								SET 
+								`title` = :title, 
+								`resume` = :resumee, 
+								`content` = :content, 
+								`tags` = :tags, 
+								`dateLastEdit` = NOW() 
+								WHERE `articles`.`id` = :id;");	
+		$req -> execute(array(
+		'id' => $id,
+		'title' => $title,
+		'resumee' => $resume,
+		'content' => $content,
+		'tags' => $tags,
+		));
+	}
 	/*function getArticleByIdInterval($idFrom,$idTo)
 	{
 		$bdd = connexion_database();
