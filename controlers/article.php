@@ -1,8 +1,6 @@
 <?php
 //controler
 	include("./models/articleModel.php");
-	
-	
 	$backofficeAcces ="";
 	if(empty($_SESSION['userName']))
 	{
@@ -16,6 +14,7 @@
 	$id = strip_tags($_GET['id']);
 
 	$article = getArticleById($id);
+	addViewToArticle($id);
     include("./views/articleView.php");
 ?>
 

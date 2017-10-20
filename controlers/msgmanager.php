@@ -18,6 +18,12 @@
             case 'disconnected':
                 $msg = "Déconnexion réussie !";
                 break;
+            case 'published':
+                $msg = "Article publié";
+                break;
+            case 'hidden':
+                $msg = "Article masqué";
+                break;    
             default:
                 $msg = "yup !";
                 break;

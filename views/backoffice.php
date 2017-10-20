@@ -16,6 +16,7 @@ include("./views/include/header.php");
 					<td>Resumé</td>
 					<td>Date dernière édition</td>
 					<td>Date publication</td>
+					<td>Vues</td>
 					<td>Publié ?</td>
 					<td>Actions</td>					
 				</tr>
@@ -30,6 +31,7 @@ include("./views/include/header.php");
 					<td><?php echo $article['resume']; ?></td>
 					<td><?php echo date_format( date_create($article['dateLastEdit']) , "j/m/y H:i") ; ?></td>
 					<td><?php echo date_format( date_create($article['datePost']) , "j/m/y H:i") ; ?></td>
+					<td><?php echo $article['view']; ?></td>					
 					<td><?php echo $article['published']==TRUE?"publié":"brouillon"; ?></td>
 					<td>	
 						<a href="index.php?page=articleEditor&amp;action=edit&amp;id=<?php echo $article['id']; ?>"><img src="./assets/img/pencil.png"/> modifier</a>

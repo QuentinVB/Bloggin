@@ -89,7 +89,7 @@
 		$req -> execute(array(
 		'id' => $id,
 		));
-	}	
+	}
 	function deleteArticle($id)
 	{
 		$bdd = connexion_database();
@@ -98,4 +98,15 @@
 		'id' => $id
 		));
 	}
+	function addViewToArticle($id)
+	{
+		$bdd = connexion_database();
+		$req = $bdd->prepare("UPDATE `articles` 
+								SET 
+								`view` = `view`+1
+								WHERE `articles`.`id` = :id;");	
+		$req -> execute(array(
+		'id' => $id,
+		));
+	}	
 ?>

@@ -19,21 +19,22 @@ lastConnexionDate
 
 ## Todo
 ### vue principale :
-affichage des la liste des articles
+affichage des la liste des articles :heavy_check_mark:
 tri par page, 
 possibilité de choisir le nombre d'article affichés
 ### Vue article :
-affichage d'un article
-possibilité de naviguer a un article plus ancien ou plus récent
+affichage d'un article :heavy_check_mark:
+possibilité de naviguer a un article plus ancien ou plus récent 
+incrémenter un compteur de vue par article :heavy_check_mark:
 ### Vue de connexion :
-pouvoir s'identifier
+pouvoir s'identifier :heavy_check_mark:
 ### Vue d'administration :
-affichage de la liste des articles
-- editer un article
-- supprimer un article
-- publier/masquer
-ajouter un article
+affichage de la liste des articles :heavy_check_mark:
+- editer un article :heavy_check_mark:
+- supprimer un article :heavy_check_mark:
+- publier/masquer :heavy_check_mark:
+ajouter un article :heavy_check_mark:
 ### Vue d'édition 
-editeur
-sauvegarder
-publier
+editeur :heavy_check_mark:
+sauvegarder :heavy_check_mark:
+publier 
