@@ -1,0 +1,39 @@
+body
+{
+    background: #181818;
+    color:rgb(0, 163, 0);
+}
+a
+{
+    color:rgb(0, 240, 0);    
+}
+a:visited
+{
+    color:rgb(0, 240, 0);    
+}
+a:hover
+{
+    color:rgb(159, 255, 159);    
+}
+textarea,input
+{
+    background: #181818;
+    color:rgb(0, 163, 0);
+    border:solid grey 2px;
+}
+input
+{
+    border:none;
+    border-bottom:solid grey 2px;
+    margin:5px;
+}
+input[type=submit]
+{
+    border:outset lightgray 2px;
+}
+input[type=submit]:hover
+{
+    background: rgb(21, 255, 21);
+    border:inset lightgray 2px;
+
+}
