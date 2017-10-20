@@ -18,7 +18,7 @@ include("./views/include/header.php");
                 <article>
                     <h2><?php echo $article['title']; ?></h2>
                     <p><?php echo $article['resume']; ?> <a href="index.php?page=article&amp;id=<?php echo $article['id']; ?>">lire => </a></p>
-                    <p><?php  echo $article['datePost'];  ?></p>
+                    <p><?php  echo date_format( date_create($article['datePost']) , "j/m/y H:i") ;  ?></p>
                 </article>    
             <?php    
         }
@@ -31,6 +31,6 @@ include("./views/include/header.php");
         <nav>
     </body>	
 <?php
-$articleList->closeCursor(); // Termine le traitement de la requête date_format( , "j/m/y H:i")
+$articleList->closeCursor(); // Termine le traitement de la requête 
 include("./views/include/footer.php");
 ?>

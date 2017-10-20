@@ -9,6 +9,7 @@
 		include("./models/articleModel.php");
 		$articleList = getAllResumeArticles(); 
 		include("./controlers/msgmanager.php");	
+		include("./functions/toolbox.php");	
 	    include("./views/backoffice.php");	
 	}
 ?>

@@ -66,17 +66,36 @@
 		'content' => $content,
 		'tags' => $tags,
 		));
-	}
-	/*
-	function deleteMarker($id, $x,$y)
+	}	
+	function publishArticle($id)
 	{
 		$bdd = connexion_database();
-		$req = $bdd->prepare("DELETE FROM `cartedata` WHERE `cartedata`.`id` = :id AND `cartedata`.`x` = :x AND `cartedata`.`y` = :y");	
+		$req = $bdd->prepare("UPDATE `articles` 
+								SET 
+								`datePost` = NOW(),
+								`published` = 1
+								WHERE `articles`.`id` = :id;");	
 		$req -> execute(array(
 		'id' => $id,
-		'x' => $x,
-		'y' => $y
+		));
+	}	
+	function hideArticle($id)
+	{
+		$bdd = connexion_database();
+		$req = $bdd->prepare("UPDATE `articles` 
+								SET 
+								`published` = 0 
+								WHERE `articles`.`id` = :id;");	
+		$req -> execute(array(
+		'id' => $id,
+		));
+	}	
+	function deleteArticle($id)
+	{
+		$bdd = connexion_database();
+		$req = $bdd->prepare("DELETE FROM `articles` WHERE `articles`.`id` = :id");	
+		$req -> execute(array(
+		'id' => $id
 		));
 	}
-*/
 ?>

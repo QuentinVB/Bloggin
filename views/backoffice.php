@@ -28,13 +28,15 @@ include("./views/include/header.php");
 				<tr>
 					<td><?php echo $article['title']; ?></td>
 					<td><?php echo $article['resume']; ?></td>
-					<td><?php echo $article['dateLastEdit']; ?></td>
-					<td><?php echo $article['datePost']; ?></td>
+					<td><?php echo date_format( date_create($article['dateLastEdit']) , "j/m/y H:i") ; ?></td>
+					<td><?php echo date_format( date_create($article['datePost']) , "j/m/y H:i") ; ?></td>
 					<td><?php echo $article['published']==TRUE?"publié":"brouillon"; ?></td>
 					<td>	
-						<a href="index.php?page=articleEditor&amp;action=edit&amp;id=<?php echo $article['id']; ?>"><img src="./assets/img/pencil.png"/>modifier</a>
+						<a href="index.php?page=articleEditor&amp;action=edit&amp;id=<?php echo $article['id']; ?>"><img src="./assets/img/pencil.png"/> modifier</a>
 						&nbsp;
-						<a href="#EditPanel"><img src="./assets/img/delete.png"/> effacer</a>
+						<?php deleteButton($article['id'],"backoffice");?>
+						&nbsp;
+						<?php publishButtonToggle($article['id'],$article['published'],"backoffice");?>
 					</td>
 				</tr>
 				<?php
