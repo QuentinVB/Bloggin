@@ -10,7 +10,7 @@
         $usersMatched = getUserByUserName($_POST['username']);
         while ($user = $usersMatched->fetch())
         {
-            /*
+            /* DEBUG
             echo count($usersMatched);
             echo "<br/>";
             echo $_POST['username'];
@@ -22,7 +22,7 @@
             echo $user['password'];
             */
              //2 check password hash
-            if($_POST['username'] == $user['userName'] && hash("md5",$_POST['password']) == $user['password'])
+            if($_POST['username'] == $user['userName'] && hash("md5",$_POST['password']) == $user['password'])//HERE IS THE SECURITY LOCK
             {
                //3 if success : 
                //create the sessions rights and allow access to the backoffice

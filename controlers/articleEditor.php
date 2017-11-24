@@ -18,7 +18,7 @@
 		}
 		else if($action == "create")
 		{
-
+			//nothing todo on create...
 		}
 		else
 		{
