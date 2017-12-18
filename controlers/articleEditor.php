@@ -22,7 +22,7 @@
 		}
 		else
 		{
-
+			//error, redirect to home page
 		}
 		include("./controlers/msgmanager.php");	
 	    include("./views/articleEditor.php");	

@@ -21,8 +21,8 @@ include("./views/include/header.php");
                 <p>Posté le <?php echo date_format( date_create($articleData['datePost']) , "j/m/y H:i") ;   ?></p>
                 
                 <p><?php echo $articleData['content']; ?> </p>
-                <p><?php echo date_format( date_create($articleData['dateLastEdit']) , "j/m/y H:i") ; ?></p>
-                <p>Tags :<?php echo $articleData['tags']; ?> Vues : <?php echo $articleData['view']; ?></p>
+                <p>Dernière édition : <?php echo date_format( date_create($articleData['dateLastEdit']) , "j/m/y H:i") ; ?></p>
+                <p>Tags : <?php echo $articleData['tags']; ?> Vues : <?php echo $articleData['view']; ?></p>
             </article>    
         <?php    
         }

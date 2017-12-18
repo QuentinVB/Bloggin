@@ -10,14 +10,14 @@ include("./views/include/header.php");
         <section>
             <p>Introduction text</p>
         </section>
-        <section>
+        <section class="article_showcase">
         <?php 
         while ($article = $articleList->fetch())
 		{
             ?>
                 <article>
-                    <h2><?php echo $article['title']; ?></h2>
-                    <p><?php echo $article['resume']; ?> <a href="index.php?page=article&amp;id=<?php echo $article['id']; ?>">lire => </a></p>
+                    <h2><a href="index.php?page=article&amp;id=<?php echo $article['id']; ?>"><?php echo $article['title']; ?></a></h2>
+                    <p><?php echo $article['resume']; ?></p>
                     <p><?php echo date_format( date_create($article['datePost']) , "j/m/y H:i") ;  ?></p>
                 </article>    
             <?php    

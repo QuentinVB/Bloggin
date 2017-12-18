@@ -1,8 +1,49 @@
+/*
+
+
+*/
 body
 {
     background: #181818;
     color:rgb(0, 163, 0);
+    font-family: 'Exo 2', sans-serif;
 }
+h1,h2
+{
+    font-family: 'Source Code Pro', monospace;
+    
+    border-bottom:rgb(71, 94, 71) solid 3px;   
+}
+h1:hover,h2:hover
+{
+    border-bottom:rgb(0, 240, 0) ridge 3px;   
+    text-shadow: 0px 0px 5px rgb(0, 240, 0) ;
+}
+section
+{
+    border-top:rgb(0, 163, 0) solid 3px;
+}
+article
+{
+    border:rgb(38, 99, 38) solid 3px;
+    box-shadow: 0px 0px 8px rgb(0, 240, 0) ;
+    padding:1%;
+    margin:20px 5% ;
+}
+.article_showcase
+{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+}
+.article_showcase article 
+{
+    padding:1%;
+    margin:1%;
+    min-width: 5%;
+    max-width: 20%;
+}
+
 a
 {
     color:rgb(0, 240, 0);    
@@ -15,11 +56,21 @@ a:hover
 {
     color:rgb(159, 255, 159);    
 }
+h1 a,h2 a
+{
+    color:none;
+    text-decoration: none;
+}
 textarea,input
 {
     background: #181818;
     color:rgb(0, 163, 0);
     border:solid grey 2px;
+    outline: none;
+}
+input[type=text]:focus, textarea:focus {
+    box-shadow: 0 0 8px rgb(21, 255, 21);
+    border:solid 2px rgb(19, 212, 19);
 }
 input
 {
